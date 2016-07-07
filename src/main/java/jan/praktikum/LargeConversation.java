@@ -9,7 +9,7 @@ public class LargeConversation {
         String name = new java.util.Scanner(System.in).nextLine();
         System.out.println("Ah dein Name ist also " + name + " !");
         System.out.println("Ich heiße Siri");
-        System.out.println("Ich habe gehört du machst du gerade ein Praktikum?");
+        System.out.println("Ich habe gehört du machst gerade ein Praktikum?");
         String praktikum = new java.util.Scanner(System.in).nextLine();
         if ("Ja".equalsIgnoreCase(praktikum)) {
             System.out.println("Wie viele Wochen dauert denn dein Praktikum?");
@@ -18,7 +18,7 @@ public class LargeConversation {
             System.out.println("Wow das sind ja " + antwort + " Tage!");
             System.out.println("Und bei welcher Firma?");
             String firma = new java.util.Scanner(System.in).nextLine();
-            if ("netcon7".equalsIgnoreCase(firma)) {
+            if ("natcon7".equalsIgnoreCase(firma)) {
                 System.out.println("Ah die kenne ich doch die macht doch Software für Kraftwerke!");
             } else
                 System.out.println("Oh die Firma kenne ich leider nicht");
