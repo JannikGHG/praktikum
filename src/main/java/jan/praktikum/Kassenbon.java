@@ -1,5 +1,7 @@
 package jan.praktikum;
 
+import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
+
 import java.util.InputMismatchException;
 
 /**
@@ -11,10 +13,10 @@ public class Kassenbon {
         int AnzahlKaese = 0;
         int AnzahlBrot = 0;
         int AnzahlDVD = 0;
-        double EinzelPreisWurst = 2;
-        double EinzelPreisKaese = 2;
-        double EinzelPreisBrot = 2;
-        double EinzelPreisDVD = 2;
+        double EinzelPreisWurst = 4.20;
+        double EinzelPreisKaese = 2.30;
+        double EinzelPreisBrot = 2.10;
+        double EinzelPreisDVD = 12.00;
         double GesamtPreisWurst = 0;
         double GesamtPreisKaese = 0;
         double GesamtPreisBrot = 0;
@@ -27,10 +29,10 @@ public class Kassenbon {
             System.out.println("Wiviel Wurst möchtest du kaufen?");
             AnzahlWurst = new java.util.Scanner(System.in).nextInt();
 
-            System.out.println("Wiviel Kaese möchtest du kaufen?");
+            System.out.println("Wiviel Käse möchtest du kaufen?");
             AnzahlKaese = new java.util.Scanner(System.in).nextInt();
 
-            System.out.println("Wiviele Brote möchtest 2 kaufen?");
+            System.out.println("Wiviele Brote möchtest du kaufen?");
             AnzahlBrot = new java.util.Scanner(System.in).nextInt();
 
             System.out.println("Wiviele DVDs möchtest du kaufen?");
@@ -48,24 +50,25 @@ public class Kassenbon {
                 Fehlt = Gegeben - Gesamt;
                 Fehlt = Fehlt * (-1);
                 System.out.println("Oh! Dir fehlen " + Fehlt + " Euro!");
+                System.exit(0);
             }
 
             Zurueck = Gesamt - Gegeben;
             Zurueck = Zurueck * (-1);
 
-            System.out.printf("Wurst%n");
-            System.out.printf( GesamtPreisWurst + "%n");
-            System.out.printf("Kaese%n");
-            System.out.printf( GesamtPreisKaese + "%n");
-            System.out.printf("Brot%n");
-            System.out.printf( GesamtPreisBrot + "%n");
-            System.out.printf("DVD%n");
-            System.out.printf( GesamtPreisDVD + "%n");
+            System.out.printf("Wurst %5d x %.2f EUR%n", AnzahlWurst, EinzelPreisWurst);
+            System.out.printf("%24.2f EUR%n", GesamtPreisWurst);
+            System.out.printf("Käse %6d x %.2f EUR%n", AnzahlKaese, EinzelPreisKaese);
+            System.out.printf("%24.2f EUR%n", GesamtPreisKaese);
+            System.out.printf("Brot %6d x %.2f EUR%n", AnzahlBrot, EinzelPreisBrot);
+            System.out.printf("%24.2f EUR%n", GesamtPreisBrot);
+            System.out.printf("DVD %7d x %.2f EUR%n", AnzahlDVD, EinzelPreisDVD);
+            System.out.printf("%24.2f EUR%n", GesamtPreisDVD);
+            System.out.printf("----------------------------%n");
+            System.out.printf("Gesamt %17.2f EUR%n", Gesamt);
+            System.out.printf("Gegeben %16.2f EUR%n", Gegeben);
             System.out.printf("%n");
-            System.out.printf("Gesamt" + Gesamt + "%n");
-            System.out.printf("Gegeben" + Gegeben + "%n");
-            System.out.printf("%n");
-            System.out.printf("Zurueck" + Zurueck + "%n");
+            System.out.printf("Zurück %17.2f EUR%n", Zurueck);
 
         } catch (InputMismatchException E) {
             System.err.println("Falsche Eingabe!");
