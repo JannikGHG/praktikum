@@ -26,6 +26,8 @@ public class Kassenbon {
         double Zurueck = 0;
         double Fehlt = 0;
         try {
+            System.out.println("Willkommen bei der Rand OHG!");
+            System.out.println("Bitte geben sie die gewünschte Anzahl an Lebensmitteln an!");
             System.out.println("Wiviel Wurst möchtest du kaufen?");
             AnzahlWurst = new java.util.Scanner(System.in).nextInt();
 
@@ -69,10 +71,13 @@ public class Kassenbon {
             System.out.printf("Gegeben %16.2f EUR%n", Gegeben);
             System.out.printf("%n");
             System.out.printf("Zurück %17.2f EUR%n", Zurueck);
+            System.out.printf("%n");
+            System.out.printf("Vielen Dank für ihren%n");
+            System.out.printf("Besuch bei der RandOHG!%n");
 
         } catch (InputMismatchException E) {
             System.err.println("Falsche Eingabe!");
-            E.printStackTrace();
+            System.err.println("Bitte nochmal versuchen!");
         }
     }
 }
