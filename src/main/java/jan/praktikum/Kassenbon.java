@@ -1,7 +1,5 @@
 package jan.praktikum;
 
-import com.sun.org.apache.bcel.internal.generic.BREAKPOINT;
-
 import java.util.InputMismatchException;
 
 /**
